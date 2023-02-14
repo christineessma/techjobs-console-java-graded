@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -94,7 +95,7 @@ public class JobData {
      * @return      List of all jobs with at least one field containing the value
      */
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
-
+        //System.out.println("!");
         // load data, if not already loaded
         loadData();
 
@@ -102,9 +103,14 @@ public class JobData {
         ArrayList<HashMap<String, String>> results = new ArrayList<>();
 
         for (HashMap<String, String> job: allJobs) {
-            for (HashMap.Entry<String, String> entry: job.entrySet()){
-                String str = String.valueOf(job);
-                if (str.toLowerCase().contains(value.toLowerCase())){
+            //System.out.println(job);
+
+            for (Map.Entry<String, String> entry: job.entrySet()){
+                //System.out.println(entry);
+                //System.out.println("value" + value.toLowerCase());
+                //System.out.println("entry" + entry.getValue().toLowerCase());
+                if (entry.getValue().toLowerCase().contains(value.toLowerCase())){
+
                     if(!results.contains(job)){
                         results.add(job);
                     }

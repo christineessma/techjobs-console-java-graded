@@ -122,9 +122,9 @@ public class TechJobs {
         if (someJobs.size() == 0) {
             System.out.println("No Results");
         } else if (someJobs.size() > 0) {
-            for (HashMap<String, String> job : someJobs) {
+            for (HashMap<String, String> jobs : someJobs) {
                 System.out.println("\n*****");
-                for (HashMap.Entry<String, String> entry: job.entrySet()) {
+                for (HashMap.Entry<String, String> entry: jobs.entrySet()) {
                     String key = entry.getKey();
                     String value = entry.getValue();
                     System.out.println(key + ": " + value);
